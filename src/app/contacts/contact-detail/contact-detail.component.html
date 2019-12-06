@@ -1,0 +1,27 @@
+
+<div class="back"><button mat-fab color="primary" [routerLink]="['/contacts']"><i class="material-icons">keyboard_backspace</i></button></div>
+<div class="container">
+  <mat-card>
+    <mat-card-title class="title">
+      {{ contact.firstName }} {{ contact.lastName }}
+    </mat-card-title>
+
+    <h5>Phone:</h5>
+    <mat-card-content class="content">
+      {{ contact.phone }}
+    </mat-card-content>
+
+    <mat-card-footer class="footer">
+      {{ contact.email }}
+    </mat-card-footer>
+  </mat-card>
+  <br />
+  <div class="editContact">
+    <button mat-fab color="primary" (click)="openDialog()"><i class="material-icons">edit</i></button>
+    &nbsp;
+    <button mat-fab color="warn" (click)="openDiscardDialog()"><i class="material-icons">delete</i></button>
+  </div>
+
+    
+  
+</div>

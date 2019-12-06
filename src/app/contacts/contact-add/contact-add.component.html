@@ -1,0 +1,119 @@
+<div>
+  <div class="add-title">
+    <h2 class="primary">Add contact</h2>
+  </div>
+  <div>
+    <form [formGroup]="addContactForm" (change)="formChanged()">
+      <mat-grid-list
+        cols="2"
+        [cols]="breakpoint"
+        rowHeight="85px"
+        (window:resize)="onResize($event)"
+      >
+        <mat-grid-tile>
+          <div class="text-inside">
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="First Name"
+                [value]="addContactForm.controls.firstname.value"
+                formControlName="firstname"
+                required
+              />
+              <mat-error
+                *ngIf="addContactForm.controls.firstname.hasError('required')"
+              >
+                Please enter first name
+              </mat-error>
+              <mat-error
+                *ngIf="addContactForm.controls.firstname.hasError('pattern')"
+              >
+                Please enter valid first name
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="text-inside">
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                placeholder="Last Name"              
+                [value]="addContactForm.controls.lastname.value"
+                formControlName="lastname"
+                required
+              />
+              <mat-error
+                *ngIf="addContactForm.controls.lastname.hasError('required')"
+              >
+                Please enter last name
+              </mat-error>
+              <mat-error
+                *ngIf="addContactForm.controls.lastname.hasError('pattern')"
+              >
+                Please enter valid last name
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <div class="text-inside">
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                type="number"
+                placeholder="Phone"
+                [value]="addContactForm.controls.phone.value"
+                formControlName="phone"
+                required
+              />
+              <mat-error
+                *ngIf="addContactForm.controls.phone.hasError('required')"
+              >
+                Please enter phone
+              </mat-error>
+              <mat-error
+                *ngIf="addContactForm.controls.phone.hasError('pattern')"
+              >
+                Please enter valid phone
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="text-inside">
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                placeholder="Email address"
+                [value]="addContactForm.controls.email.value"
+                formControlName="email" 
+              />
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <div class="btn-sec">
+        <button
+          mat-raised-button
+          type="submit"
+          color="primary"
+          class="Update-btn"
+          (click)="onAddContact()"
+        >
+          Save
+        </button>
+        <button
+          mat-raised-button
+          type="button"
+          class="Discard-btn"
+          (click)="openDialog()"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

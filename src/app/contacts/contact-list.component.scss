@@ -1,0 +1,30 @@
+.container {
+  width: 620px;
+  height: 600px;
+  margin-left: 308px;
+  margin-top: 5px;
+}
+
+.addContact {
+  margin-left: 981px;
+  padding: 30px;
+}
+
+.addButton {
+  margin-right: 30px;
+}
+
+::ng-deep.mat-pseudo-checkbox {
+  display: none !important;
+}
+.white-icon {
+  color: #778899;
+}
+/* Note: If you're using an SVG icon, you should make the class target the `<svg>` element */
+.white-icon svg {
+  fill: #778899;
+}
+
+mat-icon {
+  font-size: 18px;
+}
