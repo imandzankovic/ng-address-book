@@ -6,6 +6,7 @@ import {
   MAT_DIALOG_DATA
 } from "@angular/material/dialog";
 import { ContactService } from "../contact.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-contact-discard",
@@ -16,9 +17,11 @@ export class ContactDiscardComponent implements OnInit {
   id: any;
   title: string;
   buttonText: string;
+ 
   constructor(
     private contactService: ContactService,
     private fb: FormBuilder,
+    private router: Router,
     private dialog: MatDialog,
     private dialogRef: MatDialogRef<ContactDiscardComponent>,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: any
@@ -35,6 +38,9 @@ export class ContactDiscardComponent implements OnInit {
   public cancelN(): void {
     if (this.buttonText == "Delete") this.deleteContact();
     this.dialog.closeAll();
+    this.router.navigate(["/contacts"])
+   
+ 
   }
 
   setDiscardData() {

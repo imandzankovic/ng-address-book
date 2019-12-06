@@ -90,6 +90,7 @@ export class ContactAddComponent implements OnInit {
   onSaveComplete(): void {
     this.dialog.closeAll();
     this.router.navigate(["/contacts"]);
+    window.location.reload();
   }
 
   openDialog(): void {
