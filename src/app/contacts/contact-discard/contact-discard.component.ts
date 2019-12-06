@@ -1,4 +1,4 @@
-import { Component, OnInit, Optional, Inject, NgZone } from "@angular/core";
+import { Component, OnInit, Optional, Inject } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import {
   MatDialog,

@@ -3,7 +3,7 @@ import { ContactService } from "./contact.service";
 import { Contact } from "./contact";
 import { MatDialog } from "@angular/material/dialog";
 import { ContactAddComponent } from "./contact-add/contact-add.component";
-import { Router, ActivatedRoute } from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-contact-list",

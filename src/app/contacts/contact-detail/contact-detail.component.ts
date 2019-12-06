@@ -4,7 +4,6 @@ import { ContactService } from "../contact.service";
 import { Contact } from "../contact";
 import { MatDialog } from "@angular/material/dialog";
 import { ContactAddComponent } from "../contact-add/contact-add.component";
-import { RouterModule } from "@angular/router";
 import { ContactDiscardComponent } from "../contact-discard/contact-discard.component";
 @Component({
   selector: "app-contact-detail",
