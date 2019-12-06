@@ -61,7 +61,6 @@ export class ContactAddComponent implements OnInit {
   }
 
   saveContact(): void {
-    console.log("netipichno");
     console.log(this.addContactForm.value);
 
     if (this.addContactForm.valid) {
@@ -104,14 +103,13 @@ export class ContactAddComponent implements OnInit {
     }
   }
 
-  // tslint:disable-next-line:no-any
   public onResize(event: any): void {
     this.breakpoint = event.target.innerWidth <= 600 ? 1 : 2;
   }
 
   private markAsDirty(group: FormGroup): void {
     group.markAsDirty();
-    // tslint:disable-next-line:forin
+
     for (const i in group.controls) {
       group.controls[i].markAsDirty();
     }
