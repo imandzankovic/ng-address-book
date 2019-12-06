@@ -1,4 +1,4 @@
-import { Component, OnInit, Optional, Inject } from "@angular/core";
+import { Component, OnInit, Optional, Inject, NgZone } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import {
   MatDialog,
@@ -6,7 +6,7 @@ import {
   MAT_DIALOG_DATA
 } from "@angular/material/dialog";
 import { ContactService } from "../contact.service";
-import { Router } from '@angular/router';
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-contact-discard",
@@ -17,7 +17,7 @@ export class ContactDiscardComponent implements OnInit {
   id: any;
   title: string;
   buttonText: string;
- 
+
   constructor(
     private contactService: ContactService,
     private fb: FormBuilder,
@@ -38,9 +38,6 @@ export class ContactDiscardComponent implements OnInit {
   public cancelN(): void {
     if (this.buttonText == "Delete") this.deleteContact();
     this.dialog.closeAll();
-    this.router.navigate(["/contacts"])
-   
- 
   }
 
   setDiscardData() {
@@ -54,9 +51,10 @@ export class ContactDiscardComponent implements OnInit {
   }
 
   deleteContact() {
-    this.contactService
-      .deleteContact(this.data)
-      .subscribe(res => console.log(res));
+    this.contactService.deleteContact(this.data).subscribe(res => {
+      console.log(res);
+      this.router.navigate(["/contacts"]);
+    });
   }
   ngOnInit() {
     console.log(this.data);
