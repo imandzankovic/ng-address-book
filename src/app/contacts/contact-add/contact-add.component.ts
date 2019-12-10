@@ -39,18 +39,18 @@ export class ContactAddComponent implements OnInit {
     this.addContactForm = this.fb.group({
       IdProof: null,
       firstname: [
-        this.contact != null ? this.contact.firstName : " ",
+        this.contact != null ? this.contact.firstName : "",
         [Validators.required, Validators.pattern("[a-zA-Z]+([a-zA-Z ]+)*")]
       ],
       lastname: [
-        this.contact != null ? this.contact.lastName : " ",
+        this.contact != null ? this.contact.lastName : "",
         [Validators.required, Validators.pattern("[a-zA-Z]+([a-zA-Z ]+)*")]
       ],
       phone: [
-        this.contact != null ? this.contact.phone : " ",
+        this.contact != null ? this.contact.phone : "",
         [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]
       ],
-      email: [this.contact != null ? this.contact.email : " "]
+      email: [this.contact != null ? this.contact.email : ""]
     });
     this.breakpoint = window.innerWidth <= 600 ? 1 : 2; // Breakpoint observer codes
   }
